@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Generator</title>
+</head>
+<body>
+    <h1>Workout Generator</h1>
+    <form method="POST">
+        <label for="ai">Enter Sport</label>
+        <input type="text" id="sport" name="sport" required><br><br>
+        <label for="b">Quad to hamstring strength ratio:</label>
+        <input type="number" step="0.01" id="b" name="b" required><br><br>
+        <label for="c">Time to stabilization for single leg stand and hold(S) value:</label>
+        <input type="number" step="0.01" id="c" name="c" required><br><br>
+        <label for="d">RSI:</label>
+        <input type="number" step="0.01" id="d" name="d" required><br><br>
+        <label for="e">Adduction/Abduction Strength Ratio:</label>
+        <input type="number" step="0.01" id="e" name="e" required><br><br>
+        <label for="f">Enter Muscular Asymmetries - Hamstring:</label>
+        <input type="number" step="0.01" id="f" name="f" required><br><br>
+        <label for="g">Enter Muscular asymmetries - Abductor value:</label>
+        <input type="number" step="0.01" id="g" name="g" required><br><br>
+        <input type="submit" value="Generate Workouts">
+    </form>
+    {% if workouts %}
+<h2>Generated Workouts</h2>
+<ul>
+    {% for workout in workouts %}
+    <li>{{ workout }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+</body>
+</html>
